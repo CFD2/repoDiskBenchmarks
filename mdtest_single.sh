@@ -28,7 +28,7 @@ do
 		files=$(( i/k ))
 		echo "$files = $i / $k "
 		module load mpi/openmpi-x86_64
-		mpirun -np $numThreads --output-filename "/tmp/threads.$k.Files.$files.TotalFiles.$i" mdtest -n $files -i 10 -u
+		mpirun -np $numThreads --output-filename "/tmp/threads.$k.Files.$files.TotalFiles.$i.log" mdtest -n $files -i 10 -u
 		module purge
 	done
 done
