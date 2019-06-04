@@ -1,1 +1,1 @@
-# MDTest_Script
+# Disk benchmarks using MDTest, MPI and FIO
