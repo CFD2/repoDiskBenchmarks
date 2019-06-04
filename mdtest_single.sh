@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 LOGNAME=$(date +%Y%m%d)"_"$(date +%H%M)".log"
 echo "This script needs to be in the folder where you will perform the benchmark. Is it there? (y/n):"
@@ -19,8 +19,8 @@ do
 	echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" >> $LOGNAME
 	mdtest -n $i -i 10 -u 2>&1 | tee -a $LOGNAME
 done 
-#numThreads=(3 4 8 16 32 64 128 256 512)
-numThreads=(8 16 32 64 128 256 512)
+numThreads=(3 4 8 16 32 64 128 256 512)
+#numThreads=(8 16 32 64 128 256 512)
 for k in "${numThreads[@]}"
 do
 	for i in "${numFiles[@]}"
