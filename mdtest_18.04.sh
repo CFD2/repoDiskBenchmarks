@@ -19,6 +19,8 @@ do
 	echo "Starting MDTest 1 thread, numFilesTotal="$i >> $LOGNAME
 	echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" >> $LOGNAME
 	mdtest -n=$i -i=10 -u --posix.odirect 2>&1 | tee -a $LOGNAME
+	echo "sleeping for 15s"
+	sleep 15s
 done 
 #numThreads=(3 4 8 16 32 64 128 256 512)
 numThreads=(3 4 8 12 16 20)
@@ -32,5 +34,7 @@ do
 		#module load mpi/openmpi-x86_64
 		mpirun -np $numThreads --output-filename "/tmp/threads.$k.Files.$files.TotalFiles.$i" --allow-run-as-root mdtest -n=$files -i=10 -u --posix.odirect
 		#module purge
+		echo "sleeping for 15s"
+		sleep 15s
 	done
 done
