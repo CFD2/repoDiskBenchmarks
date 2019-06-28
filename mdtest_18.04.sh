@@ -32,7 +32,7 @@ do
 		files=$(( i/k ))
 		echo "$files = $i / $k "
 		#module load mpi/openmpi-x86_64
-		mpirun --np=$numThreads --output-filename "/tmp/threads.$k.Files.$files.TotalFiles.$i" --allow-run-as-root mdtest -n=$files -i=10 -u --posix.odirect
+		mpirun --np $numThreads --output-filename "/tmp/threads.$k.Files.$files.TotalFiles.$i" --allow-run-as-root mdtest -n=$files -i=10 -u --posix.odirect
 		#module purge
 		echo "sleeping for 15s"
 		sleep 15s
